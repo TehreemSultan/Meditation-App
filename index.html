@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Document</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+     <link rel="stylesheet" href="./style.css">
+    </head>
+<body>
+    <div class="modal fade " tabindex="-1" role="dialog" id="audio-modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">SELECT MUSIC </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>
+                  <button class="btn btn-lg my-1 song-select" data-sound="./audios/beach.mp3">Beach Waves Soothing Sound</button>
+                  <button class="btn btn-lg my-1 song-select" data-sound="./audios/rain.mp3">Rain Fall sound</button>
+                  <button class="btn btn-lg my-1 song-select" data-sound="./audios/birds.mp3">spring birds chirping sound</button>
+              </p>
+            </div>
+            <div class="modal-footer">
+                
+             
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="modal fade " tabindex="-1" role="dialog" id="video-modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">SELECT VIDEO </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>
+                    <button class="btn btn-lg my-1 video-select" data-video="./videos/beach1.mp4">Beach </button>
+                    <button class="btn btn-lg my-1 video-select" data-video="./videos/beach2.mp4">Beach along roadside </button>
+                    <button class="btn btn-lg my-1 video-select" data-video="./videos/rain_in_city.mp4">Rain in city</button>
+                    <button class="btn btn-lg my-1 video-select" data-video="./videos/rain.mp4">Rain </button>
+                    <button class="btn btn-lg my-1 video-select" data-video="./videos/trees.mp4">trees</button>
+                 
+              </p>
+            </div>
+            <div class="modal-footer">
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade " tabindex="-1" role="dialog" id="timer-modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">SELECT TIME</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>
+                    <button class="btn btn-lg my-1 time-select" data-time="5">5 minutes </button>
+                    <button class="btn btn-lg my-1 time-select" data-time="10">10 minutes</button>
+                    <p>or type any value in minutes</p>
+                    <input class="my-1 input-time" name="timer-input">
+                    <button class="btn btn-sm btn-primary inputBtn time-select" data-time="">Enter</button>
+              </p>
+            </div>
+            <div class="modal-footer">
+              
+             
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="fluid-container">
+<div class="row">
+    <div class="timer col-sm-4 d-flex  justify-content-center align-items-center">
+        <button class="btn btn-sm" id="timerButton" data-toggle="modal" data-target="#timer-modal"><i class="fa fa-clock-o icon" ></i></button>
+    </div>
+    
+    <div class="round col-sm-4">
+        <div class="circle d-flex  justify-content-center align-items-center ">
+            <button class="pause btn btn-lg " ><svg class="p" width="90" height="90" viewBox="0 0 68 78" fill="none" >
+                <path d="M68 39L0.499996 77.9711L0.5 0.0288552L68 39Z" fill="white"/>
+            </svg></button>
+            <button class="play btn btn-lg " ><svg  class="p" width="90" height="90" viewBox="0 0 90 90" fill="none" >
+                <rect width="30" height="90" fill="white"/>
+                <rect x="60" width="30" height="90" fill="white"/>
+            </svg></button>
+            <svg class="track-outline" width="90%" height="90%" viewBox="0 0 453 453" fill="none" >
+               <circle class="text-center" cx="50%" cy="50%" r="45%" stroke="white" stroke-width="20"/>
+            </svg>
+            <svg class="moving-outline" width="90%" height="90%" viewBox="0 0 453 453" fill="none" >
+                <circle class="text-center" cx="50%" cy="50%" r="45%" stroke="#38e7e7" stroke-width="20"/>
+            </svg>
+            
+        </div>
+        <div>
+          <button class="btn btn-sm restart " disabled ><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            <h3 class="time-show text-white">0:0:0</h3>
+        </div> 
+    </div>
+    
+    <div class="videoAndAudio col-sm-4 d-flex  justify-content-around align-items-center">
+        <button id="audioButton" class="btn btn-sm"  data-toggle="modal" data-target="#audio-modal"><i class="fa fa-music icon" aria-hidden="true"></i></button>
+        <button id="videoButton" class="btn btn-sm" data-toggle="modal" data-target="#video-modal"><i class="fa fa-video-camera icon" aria-hidden="true"></i></button>
+       
+    </div>
+   
+</div>
+<video loop muted src="./videos/rain.mp4" type="video/mp4"></video >
+<audio loop src="./audios/rain.mp3"></audio>
+
+</div>
+     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="app.js"></script>
+ 
+</body>
+</html>

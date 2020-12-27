@@ -1,0 +1,110 @@
+*{
+    box-sizing : border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.row{
+    height: 100%;
+}
+
+.fluid-container{
+    width:100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+#timerButton,#audioButton,#videoButton{
+    border-radius: 500px;
+    background-color:transparent;
+    border: 2px ridge white; 
+    transition: 2;
+}
+
+#timerButton:hover,#audioButton:hover,#videoButton:hover{
+  background-color:rgba(177, 165, 247, 0.3);
+  border-color: transparent;
+ 
+  
+}
+.icon:hover{
+    color:#96cccc;
+}
+svg{
+    pointer-events: none;
+   
+}
+.p{
+    transform: translate(-50%,-50%);
+}
+.circle{
+    width:100%;
+    height:100%;
+    position: relative;
+}
+.circle svg{
+    position: absolute;
+}
+.play,.pause{
+    width:90px;
+    height: 90px;
+    background-color: transparent;
+}
+.play{
+    display: none;
+ 
+}
+.circle .moving-outline{
+    transform: rotate(-90deg);
+}
+.time-show{
+
+    text-align: center;
+    display: block;  
+    position: static; 
+}
+.restart{
+    text-align: center;
+    display: block;  
+    position: relative;
+    margin: 0 auto;
+    color:#96cccc;
+    opacity: 0.5;
+    background-color: transparent;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px dimgray;
+   
+}
+
+
+.icon{
+    font-size: 50px;
+    color:white;
+    padding: 10px;
+    text-shadow: 1px 1px 2px dimgray;
+}
+video{
+    position: absolute;
+    z-index: -10;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    object-fit: cover;
+}
+@media only screen and (min-width:768px){
+.time-show {
+    position: absolute;
+    bottom: 10%;
+    left:50%;
+transform: translate(-50%,-50%);
+}
+.restart{
+    position: absolute;
+    bottom: 17%;
+    left:50%;
+transform: translate(-50%,-50%);
+}
+
+}
